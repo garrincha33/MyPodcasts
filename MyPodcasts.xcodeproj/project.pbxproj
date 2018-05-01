@@ -12,6 +12,7 @@
 		1B1412D42083B2DB002D310F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1412D22083B2DB002D310F /* Main.storyboard */; };
 		1B1412D62083B2DB002D310F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B1412D52083B2DB002D310F /* Assets.xcassets */; };
 		1B1412D92083B2DB002D310F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1412D72083B2DB002D310F /* LaunchScreen.storyboard */; };
+		1BDC5921209844FC00C393D1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC5920209844FC00C393D1 /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		1B1412D52083B2DB002D310F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B1412D82083B2DB002D310F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B1412DA2083B2DB002D310F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BDC5920209844FC00C393D1 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				1B1412CE2083B2DB002D310F /* AppDelegate.swift */,
 				1B1412D02083B2DB002D310F /* ViewController.swift */,
+				1BDC5920209844FC00C393D1 /* MainTabBarController.swift */,
 				1B1412D22083B2DB002D310F /* Main.storyboard */,
 				1B1412D52083B2DB002D310F /* Assets.xcassets */,
 				1B1412D72083B2DB002D310F /* LaunchScreen.storyboard */,
@@ -91,7 +94,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "twisted echo";
 				TargetAttributes = {
 					1B1412CA2083B2DB002D310F = {
@@ -138,6 +141,7 @@
 			files = (
 				1B1412D12083B2DB002D310F /* ViewController.swift in Sources */,
 				1B1412CF2083B2DB002D310F /* AppDelegate.swift in Sources */,
+				1BDC5921209844FC00C393D1 /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +181,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -184,6 +189,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -234,6 +240,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -241,6 +248,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
