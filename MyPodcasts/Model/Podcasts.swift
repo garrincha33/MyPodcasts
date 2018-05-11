@@ -8,8 +8,8 @@
 
 import UIKit
 
-struct Podcasts {
+struct Podcasts: Decodable {
     let artistName: String
-    let name: String
+    let trackName: String
     
 }

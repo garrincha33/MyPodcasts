@@ -13,8 +13,8 @@ import Alamofire
 class PodcastSearchController: UITableViewController, UISearchBarDelegate {
     
     let podcasts = [
-        Podcasts(artistName: "Richard P", name: "Cast Away"),
-        Podcasts(artistName: "Davey", name: "into the night")
+        Podcasts(artistName: "Richard P", trackName: "Cast Away"),
+        Podcasts(artistName: "Davey", trackName: "into the night")
     ]
     
     let cellId = "somerthing"
@@ -42,7 +42,7 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
         
-        let url = "https://yahoo.com"
+        let url = "https://itunes.apple.com/search?term=\(searchText)"
         Alamofire.request(url).response { (dataResponse) in
             if let err = dataResponse.error {
                 print("unable to contact host", err)
@@ -52,10 +52,26 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
             guard let data = dataResponse.data else {return}
             let fakeString = String(data: data, encoding: .utf8)
             print(fakeString ?? "")
-
+            
+            do {
+                
+                let searchResult = try
+                JSONDecoder().decode(SearchResults.self, from: data)
+                print("Result Coount", searchResult.resultCount)
+                
+                
+            } catch let error {
+                print("unable to decode", error)
+            }
         }
-
     }
+    
+    struct SearchResults: Decodable {
+        let resultCount: Int
+        let results: [Podcasts]
+    }
+    
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return podcasts.count
@@ -66,7 +82,7 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         let podcast = self.podcasts[indexPath.row]
         cell.textLabel?.numberOfLines = -1
-        cell.textLabel?.text = "\(podcast.artistName)\n\(podcast.name)"
+        cell.textLabel?.text = "\(podcast.artistName)\n\(podcast.trackName)"
         cell.imageView?.image = #imageLiteral(resourceName: "appicon")
         return cell
         
