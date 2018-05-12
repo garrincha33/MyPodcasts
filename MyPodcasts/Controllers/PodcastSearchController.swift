@@ -13,16 +13,12 @@ import Alamofire
 class PodcastSearchController: UITableViewController, UISearchBarDelegate {
     
     var podcasts = [Podcasts]()
-//        Podcasts(artistName: "Richard P", trackName: "Cast Away"),
-//        Podcasts(artistName: "Davey", trackName: "into the night")
-    
-    
     let cellId = "somerthing"
     let searchController = UISearchController(searchResultsController: nil)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableViewSetup()
         searchBarSetup()
     }
@@ -46,7 +42,6 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
         let parameters = ["term": searchText]
         
         Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).response { (dataResponse) in
-            
             if let err = dataResponse.error {
                 print("unable to contact host", err)
                 return
@@ -57,22 +52,20 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
             do {
                 let searchResult = try
                     JSONDecoder().decode(SearchResults.self, from: data)
-                
                 self.podcasts = searchResult.results
                 self.tableView.reloadData()
-                
             } catch let error {
                 print("unable to decode", error)
             }
         }
     }
-
+    
     
     struct SearchResults: Decodable {
         let resultCount: Int
         let results: [Podcasts]
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return podcasts.count
     }
