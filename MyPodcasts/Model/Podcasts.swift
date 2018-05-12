@@ -9,7 +9,8 @@
 import UIKit
 
 struct Podcasts: Decodable {
-    let artistName: String
-    let trackName: String
+    var artistName: String?
+    var trackName: String?
+    var collectionName: String?
     
 }
