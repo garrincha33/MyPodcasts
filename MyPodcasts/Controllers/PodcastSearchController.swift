@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-
 
 class PodcastSearchController: UITableViewController, UISearchBarDelegate {
     
@@ -36,36 +34,12 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
-        
-        let url = "https://itunes.apple.com/search"
-        let parameters = ["term": searchText]
-        
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).response { (dataResponse) in
-            if let err = dataResponse.error {
-                print("unable to contact host", err)
-                return
-            }
-            
-            guard let data = dataResponse.data else {return}
-            
-            do {
-                let searchResult = try
-                    JSONDecoder().decode(SearchResults.self, from: data)
-                self.podcasts = searchResult.results
-                self.tableView.reloadData()
-            } catch let error {
-                print("unable to decode", error)
-            }
+        APIService.shared.fetchPodcasts(searchText: searchText) { (podcast) in
+            self.podcasts = podcast
+            self.tableView.reloadData()
         }
     }
-    
-    
-    struct SearchResults: Decodable {
-        let resultCount: Int
-        let results: [Podcasts]
-    }
-    
+  
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return podcasts.count
     }

@@ -12,5 +12,4 @@ struct Podcasts: Decodable {
     var artistName: String?
     var trackName: String?
     var collectionName: String?
-    
 }
