@@ -11,5 +11,8 @@ import UIKit
 struct Podcasts: Decodable {
     var artistName: String?
     var trackName: String?
+    var trackCount: Int?
     var collectionName: String?
+    var artworkUrl600: String?
+    var feedUrl: String?
 }
