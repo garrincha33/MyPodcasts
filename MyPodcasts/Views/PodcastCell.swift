@@ -18,10 +18,21 @@ class PodcastCell: UITableViewCell {
     
     var podcast: Podcasts! {
         didSet {
-            
             trackName.text = podcast.trackName
             artistName.text = podcast.artistName
-
+            episodeCount.text =  "\(podcast.trackCount ?? 0) Episodes"
+            
+            print("Loading image with Url:", podcast.artworkUrl600 ?? "")
+            //MARK:- loading images
+            guard let url = URL(string: podcast.artworkUrl600 ?? "") else {return}
+            URLSession.shared.dataTask(with: url) { (data, _, _) in
+                print("Finished Downloading image data: ", data ?? "")
+                
+                guard let data = data else {return}
+                DispatchQueue.main.async {
+                    self.podcastImage.image = UIImage(data: data)
+                }
+            }.resume()
         }
     }
 }
