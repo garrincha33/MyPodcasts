@@ -24,6 +24,7 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
     
     fileprivate func tableViewSetup() {
         //tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.tableFooterView = UIView()
         let nib = UINib(nibName: "PodcastCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellId)
     }
@@ -55,5 +56,18 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 132
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let lable = UILabel()
+        lable.text = "Please enter your search term"
+        lable.textAlignment = .center
+        lable.font = UIFont.systemFont(ofSize: 17)
+        lable.textColor = .purple
+        return lable
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 250
     }
 }
