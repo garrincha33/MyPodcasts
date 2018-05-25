@@ -21,7 +21,6 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
         searchBarSetup()
     }
     
-    
     fileprivate func tableViewSetup() {
         //tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         tableView.tableFooterView = UIView()
@@ -30,6 +29,7 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
     }
     
     fileprivate func searchBarSetup() {
+        self.definesPresentationContext = true
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.dimsBackgroundDuringPresentation = false
@@ -41,6 +41,16 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
             self.podcasts = podcast
             self.tableView.reloadData()
         }
+    }
+    
+    //MARK:- tableView Methods
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = EpisodesController()
+        let podcast = podcasts[indexPath.row]
+        controller.podcast = podcast
+        navigationController?.pushViewController(controller, animated: true)
+ 
     }
   
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,6 +78,6 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 250
+        return self.podcasts.count > 0 ? 0 : 250
     }
 }
