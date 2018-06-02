@@ -12,6 +12,10 @@ import FeedKit
 
 class APIService {
     
+    func test() {
+        
+    }
+    
     static let shared = APIService()
     
     func fetchEpisodes(feedUrl: String, completionHander: @escaping ([Episode]) -> ()) {

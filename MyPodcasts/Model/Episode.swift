@@ -17,6 +17,8 @@ struct Episode {
     let pubDate: Date
     var imageUrl: String?
     
+
+    
     
     init(feedItem: RSSFeedItem) {
         
@@ -27,3 +29,5 @@ struct Episode {
         
     }
 }
+
+
