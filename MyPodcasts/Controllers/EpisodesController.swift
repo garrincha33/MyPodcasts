@@ -45,8 +45,7 @@ class EpisodesController: UITableViewController {
     //MARK:- setupTableView
     fileprivate func setupTableView() {
         tableView.tableFooterView = UIView()
-        let nib = UINib(nibName: "EpisodeCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: cellId)
+        APIService.shared.makeNib(with: "EpisodeCell", tableView: tableView, cellId: cellId)
     }
     //MARK:- UITableView
     
