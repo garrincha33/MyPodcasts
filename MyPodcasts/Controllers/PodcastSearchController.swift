@@ -23,8 +23,7 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
     
     fileprivate func tableViewSetup() {
         tableView.tableFooterView = UIView()
-        let nib = UINib(nibName: "PodcastCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: cellId)
+        APIService.shared.makeNib(with: "PodcastCell", tableView: tableView, cellId: cellId)
     }
     
     fileprivate func searchBarSetup() {

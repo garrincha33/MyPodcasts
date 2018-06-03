@@ -49,6 +49,11 @@ class APIService {
         }
     }
     
+    func makeNib(with nibName: String, tableView: UITableView, cellId: String){
+        let nib = UINib(nibName: nibName, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: cellId)
+    }
+    
     struct SearchResults: Decodable {
         let resultCount: Int
         let results: [Podcasts]
