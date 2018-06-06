@@ -13,6 +13,8 @@
 		1B1412D62083B2DB002D310F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B1412D52083B2DB002D310F /* Assets.xcassets */; };
 		1B1412D92083B2DB002D310F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1412D72083B2DB002D310F /* LaunchScreen.storyboard */; };
 		1B1D7A2320B801EB006D0E2A /* EpisodesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1D7A2220B801EB006D0E2A /* EpisodesController.swift */; };
+		1B2F382F20C84EFF00AB7353 /* MyPodcastsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2F382E20C84EFF00AB7353 /* MyPodcastsUITest.swift */; };
+		1B2F383620C84FAF00AB7353 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2F382620C84C8100AB7353 /* SnapshotHelper.swift */; };
 		1B5254F420ACBB2D006C6CA9 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5254F320ACBB2D006C6CA9 /* APIService.swift */; };
 		1B5254FD20AE0A6A006C6CA9 /* PodcastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B5254FC20AE0A6A006C6CA9 /* PodcastCell.xib */; };
 		1B5254FF20AE0CB4006C6CA9 /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5254FE20AE0CB4006C6CA9 /* PodcastCell.swift */; };
@@ -27,6 +29,16 @@
 		29F1C6F853DC2DD6E7DD8C0D /* Pods_MyPodcasts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F93DA159304D6E8915E5AD9 /* Pods_MyPodcasts.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1B2F383120C84EFF00AB7353 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B1412C32083B2DB002D310F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B1412CA2083B2DB002D310F;
+			remoteInfo = MyPodcasts;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1B1412CB2083B2DB002D310F /* MyPodcasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPodcasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B1412CE2083B2DB002D310F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +48,10 @@
 		1B1412D82083B2DB002D310F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B1412DA2083B2DB002D310F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B1D7A2220B801EB006D0E2A /* EpisodesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesController.swift; sourceTree = "<group>"; };
+		1B2F382620C84C8100AB7353 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		1B2F382C20C84EFF00AB7353 /* MyPodcastsUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPodcastsUITest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B2F382E20C84EFF00AB7353 /* MyPodcastsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPodcastsUITest.swift; sourceTree = "<group>"; };
+		1B2F383020C84EFF00AB7353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B5254F320ACBB2D006C6CA9 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		1B5254FC20AE0A6A006C6CA9 /* PodcastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastCell.xib; sourceTree = "<group>"; };
 		1B5254FE20AE0CB4006C6CA9 /* PodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
@@ -61,6 +77,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1B2F382920C84EFF00AB7353 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -68,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				1B1412CD2083B2DB002D310F /* MyPodcasts */,
+				1B2F382D20C84EFF00AB7353 /* MyPodcastsUITest */,
 				1B1412CC2083B2DB002D310F /* Products */,
 				372A35B0A9B89721F34C7A3C /* Pods */,
 				68F20EB8F952F741E7A5D499 /* Frameworks */,
@@ -78,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				1B1412CB2083B2DB002D310F /* MyPodcasts.app */,
+				1B2F382C20C84EFF00AB7353 /* MyPodcastsUITest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +122,16 @@
 				1B1412DA2083B2DB002D310F /* Info.plist */,
 			);
 			path = MyPodcasts;
+			sourceTree = "<group>";
+		};
+		1B2F382D20C84EFF00AB7353 /* MyPodcastsUITest */ = {
+			isa = PBXGroup;
+			children = (
+				1B2F382E20C84EFF00AB7353 /* MyPodcastsUITest.swift */,
+				1B2F382620C84C8100AB7353 /* SnapshotHelper.swift */,
+				1B2F383020C84EFF00AB7353 /* Info.plist */,
+			);
+			path = MyPodcastsUITest;
 			sourceTree = "<group>";
 		};
 		1B5254F220ACBB0C006C6CA9 /* API */ = {
@@ -186,19 +221,42 @@
 			productReference = 1B1412CB2083B2DB002D310F /* MyPodcasts.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1B2F382B20C84EFF00AB7353 /* MyPodcastsUITest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B2F383320C84EFF00AB7353 /* Build configuration list for PBXNativeTarget "MyPodcastsUITest" */;
+			buildPhases = (
+				1B2F382820C84EFF00AB7353 /* Sources */,
+				1B2F382920C84EFF00AB7353 /* Frameworks */,
+				1B2F382A20C84EFF00AB7353 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B2F383220C84EFF00AB7353 /* PBXTargetDependency */,
+			);
+			name = MyPodcastsUITest;
+			productName = MyPodcastsUITest;
+			productReference = 1B2F382C20C84EFF00AB7353 /* MyPodcastsUITest.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1B1412C32083B2DB002D310F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "twisted echo";
 				TargetAttributes = {
 					1B1412CA2083B2DB002D310F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					1B2F382B20C84EFF00AB7353 = {
+						CreatedOnToolsVersion = 9.4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1B1412CA2083B2DB002D310F;
 					};
 				};
 			};
@@ -216,6 +274,7 @@
 			projectRoot = "";
 			targets = (
 				1B1412CA2083B2DB002D310F /* MyPodcasts */,
+				1B2F382B20C84EFF00AB7353 /* MyPodcastsUITest */,
 			);
 		};
 /* End PBXProject section */
@@ -230,6 +289,13 @@
 				1BF8661A20BF15A00090AF16 /* EpisodeCell.xib in Resources */,
 				1B5254FD20AE0A6A006C6CA9 /* PodcastCell.xib in Resources */,
 				1B1412D42083B2DB002D310F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B2F382A20C84EFF00AB7353 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +364,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1B2F382820C84EFF00AB7353 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B2F382F20C84EFF00AB7353 /* MyPodcastsUITest.swift in Sources */,
+				1B2F383620C84FAF00AB7353 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B2F383220C84EFF00AB7353 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B1412CA2083B2DB002D310F /* MyPodcasts */;
+			targetProxy = 1B2F383120C84EFF00AB7353 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1B1412D22083B2DB002D310F /* Main.storyboard */ = {
@@ -463,6 +546,40 @@
 			};
 			name = Release;
 		};
+		1B2F383420C84EFF00AB7353 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UMQAGMF379;
+				INFOPLIST_FILE = MyPodcastsUITest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.twisted.MyPodcastsUITest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyPodcasts;
+			};
+			name = Debug;
+		};
+		1B2F383520C84EFF00AB7353 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UMQAGMF379;
+				INFOPLIST_FILE = MyPodcastsUITest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.twisted.MyPodcastsUITest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyPodcasts;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -480,6 +597,15 @@
 			buildConfigurations = (
 				1B1412DE2083B2DB002D310F /* Debug */,
 				1B1412DF2083B2DB002D310F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B2F383320C84EFF00AB7353 /* Build configuration list for PBXNativeTarget "MyPodcastsUITest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B2F383420C84EFF00AB7353 /* Debug */,
+				1B2F383520C84EFF00AB7353 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

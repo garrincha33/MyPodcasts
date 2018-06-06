@@ -1,0 +1,9 @@
+app_identifier("com.twisted.MyPodcasts") # The bundle identifier of your app
+apple_id("mrspondooli@googlemail.com") # Your Apple email address
+
+itc_team_id("117815373") # iTunes Connect Team ID
+itc_team_id("117815373") # iTunes Connect Team ID
+team_id("UMQAGMF379") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
