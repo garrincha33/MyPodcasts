@@ -65,4 +65,16 @@ class EpisodesController: UITableViewController {
         return 135
     }
     
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        let episode = self.episodes[indexPath.row]
+        print("trying to click on this episode", episode.title)
+        let window = UIApplication.shared.keyWindow
+        let playerDetailsView = Bundle.main.loadNibNamed("PlayerDetailsView", owner: self, options: nil)?.first as! PlayerDetailsView
+        playerDetailsView.episode = episode
+        playerDetailsView.frame = self.view.frame
+        window?.addSubview(playerDetailsView)
+ 
+    }
+    
 }
