@@ -151,8 +151,8 @@
 			children = (
 				1B5254FC20AE0A6A006C6CA9 /* PodcastCell.xib */,
 				1B5254FE20AE0CB4006C6CA9 /* PodcastCell.swift */,
-				1BF8661720BF15A00090AF16 /* EpisodeCell.swift */,
 				1BF8661820BF15A00090AF16 /* EpisodeCell.xib */,
+				1BF8661720BF15A00090AF16 /* EpisodeCell.swift */,
 				1B2F383720C9874000AB7353 /* PlayerDetailsView.xib */,
 				1B2F383920C9898600AB7353 /* PlayerDetailsView.swift */,
 			);
