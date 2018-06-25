@@ -10,9 +10,12 @@ import UIKit
 import AVKit
 
 class PlayerDetailsView: UIView {
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        observePlayCurrentTime()
+        
         let time = CMTimeMake(1, 3)
         let times = [NSValue(time: time)]
         player.addBoundaryTimeObserver(forTimes: times, queue: .main) {
@@ -22,6 +25,7 @@ class PlayerDetailsView: UIView {
     
     @IBAction func dissmissButtonTapped(_ sender: Any) {
         self.removeFromSuperview()
+        player.pause()
     }
     
     //MARK:- Actions and Outlets
@@ -40,7 +44,11 @@ class PlayerDetailsView: UIView {
             episodePlayPauseButton.addTarget(self, action: #selector(handlePayPause), for: .touchUpInside)
         }
     }
+    @IBOutlet weak var currentTimeSlider: UISlider!
+    @IBOutlet weak var currentTimeLable: UILabel!
+    @IBOutlet weak var durationLable: UILabel!
     //MARK:-
+    
     var episode: Episode! {
         didSet {
             playEpisode()
@@ -50,6 +58,22 @@ class PlayerDetailsView: UIView {
             episodeAuthor.text = episode.author
             print("\(episodeAuthor.text = episode.author)")
         }
+    }
+    fileprivate func observePlayCurrentTime() {
+        let interval = CMTimeMake(1, 2)
+        player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { (time) in
+            self.currentTimeLable.text = time.toDisplayString()
+            let durationTime = self.player.currentItem?.duration
+            self.durationLable.text = durationTime?.toDisplayString()
+            self.updateCurrentTimeSlider()
+        }
+    }
+    
+    fileprivate func updateCurrentTimeSlider() {
+        let currentTimeSeconds = CMTimeGetSeconds(player.currentTime())
+        let durationSecondes = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(1, 1))
+        let percentage = currentTimeSeconds / durationSecondes
+        self.currentTimeSlider.value = Float(percentage)
     }
     
     fileprivate func playEpisode() {
