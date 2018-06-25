@@ -45,16 +45,16 @@
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DCV-qp-VuQ">
                             <rect key="frame" x="0.0" y="416" width="327" height="20"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlr-XH-H1E">
-                                    <rect key="frame" x="0.0" y="0.0" width="64" height="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlr-XH-H1E">
+                                    <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fC-ce-cpN">
-                                    <rect key="frame" x="64" y="0.0" width="263" height="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fC-ce-cpN">
+                                    <rect key="frame" x="41.333333333333343" y="0.0" width="285.66666666666663" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -157,6 +157,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="pQd-yI-g21"/>
             <connections>
+                <outlet property="currentTimeLable" destination="Nlr-XH-H1E" id="IMo-ZY-d4V"/>
+                <outlet property="currentTimeSlider" destination="E1k-9q-gtf" id="KD7-GU-FZ5"/>
+                <outlet property="durationLable" destination="0fC-ce-cpN" id="Yz9-fS-DFI"/>
                 <outlet property="episodeAuthor" destination="Txt-s7-CHp" id="HX0-PY-1hN"/>
                 <outlet property="episodeImageView" destination="fkV-9F-Bxa" id="dNk-uM-94k"/>
                 <outlet property="episodePlayPauseButton" destination="WOz-K3-Avn" id="1L9-4J-DjQ"/>

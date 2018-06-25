@@ -20,6 +20,7 @@
 		1B5254F420ACBB2D006C6CA9 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5254F320ACBB2D006C6CA9 /* APIService.swift */; };
 		1B5254FD20AE0A6A006C6CA9 /* PodcastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B5254FC20AE0A6A006C6CA9 /* PodcastCell.xib */; };
 		1B5254FF20AE0CB4006C6CA9 /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5254FE20AE0CB4006C6CA9 /* PodcastCell.swift */; };
+		1B7BE8F220E0EFB8005D89FE /* CMTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7BE8F120E0EFB8005D89FE /* CMTime.swift */; };
 		1BCBF11320C28644001B1A79 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBF11220C28644001B1A79 /* String.swift */; };
 		1BCBF11520C287E6001B1A79 /* RSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCBF11420C287E6001B1A79 /* RSSFeed.swift */; };
 		1BDC5921209844FC00C393D1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC5920209844FC00C393D1 /* MainTabBarController.swift */; };
@@ -59,6 +60,7 @@
 		1B5254F320ACBB2D006C6CA9 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		1B5254FC20AE0A6A006C6CA9 /* PodcastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastCell.xib; sourceTree = "<group>"; };
 		1B5254FE20AE0CB4006C6CA9 /* PodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
+		1B7BE8F120E0EFB8005D89FE /* CMTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMTime.swift; sourceTree = "<group>"; };
 		1BCBF11220C28644001B1A79 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		1BCBF11420C287E6001B1A79 /* RSSFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeed.swift; sourceTree = "<group>"; };
 		1BDC5920209844FC00C393D1 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				1BCBF11220C28644001B1A79 /* String.swift */,
 				1BCBF11420C287E6001B1A79 /* RSSFeed.swift */,
+				1B7BE8F120E0EFB8005D89FE /* CMTime.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				1B2F383A20C9898600AB7353 /* PlayerDetailsView.swift in Sources */,
 				1BDC5955209B7D4200C393D1 /* PodcastSearchController.swift in Sources */,
 				1BCBF11320C28644001B1A79 /* String.swift in Sources */,
+				1B7BE8F220E0EFB8005D89FE /* CMTime.swift in Sources */,
 				1B1412D12083B2DB002D310F /* ViewController.swift in Sources */,
 				1B1412CF2083B2DB002D310F /* AppDelegate.swift in Sources */,
 				1B1D7A2320B801EB006D0E2A /* EpisodesController.swift in Sources */,
