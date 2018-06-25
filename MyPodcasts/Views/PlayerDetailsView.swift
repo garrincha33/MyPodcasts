@@ -11,11 +11,27 @@ import AVKit
 
 class PlayerDetailsView: UIView {
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let time = CMTimeMake(1, 3)
+        let times = [NSValue(time: time)]
+        player.addBoundaryTimeObserver(forTimes: times, queue: .main) {
+            self.enlargeImageView()
+        }
+    }
+    
     @IBAction func dissmissButtonTapped(_ sender: Any) {
         self.removeFromSuperview()
     }
+    
     //MARK:- Actions and Outlets
-    @IBOutlet weak var episodeImageView: UIImageView!
+    @IBOutlet weak var episodeImageView: UIImageView! {
+        didSet {
+            episodeImageView.layer.cornerRadius = 5
+            episodeImageView.clipsToBounds = true
+            episodeImageView.transform = self.shrinkTransform
+        }
+    }
     @IBOutlet weak var episodeTitle: UILabel!
     @IBOutlet weak var episodeAuthor: UILabel!
     @IBOutlet weak var episodePlayPauseButton: UIButton! {
@@ -25,7 +41,6 @@ class PlayerDetailsView: UIView {
         }
     }
     //MARK:-
-    
     var episode: Episode! {
         didSet {
             playEpisode()
@@ -54,9 +69,25 @@ class PlayerDetailsView: UIView {
         if player.timeControlStatus == .paused {
             player.play()
             episodePlayPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            enlargeImageView()
         } else {
          player.pause()
             episodePlayPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            shrinkImageView()
         }
+    }
+    
+    fileprivate let shrinkTransform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+    
+    fileprivate func enlargeImageView() {
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.episodeImageView.transform = .identity
+        }, completion: nil)
+    }
+    
+    fileprivate func shrinkImageView() {
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.episodeImageView.transform = self.shrinkTransform
+        })
     }
 }
