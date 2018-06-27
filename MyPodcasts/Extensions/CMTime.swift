@@ -9,7 +9,6 @@
 import AVKit
 
 extension CMTime {
-    
     func toDisplayString() -> String {
         let totalSeconds = Int(CMTimeGetSeconds(self))
         let seconds = totalSeconds % 60
