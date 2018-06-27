@@ -10,6 +10,7 @@ import UIKit
 
 class PodcastSearchController: UITableViewController, UISearchBarDelegate {
     
+    var timer: Timer?
     var podcasts = [Podcasts]()
     let cellId = "somerthing"
     let searchController = UISearchController(searchResultsController: nil)
@@ -35,14 +36,16 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        APIService.shared.fetchPodcasts(searchText: searchText) { (podcast) in
-            self.podcasts = podcast
-            self.tableView.reloadData()
-        }
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false, block: { (timer) in
+            APIService.shared.fetchPodcasts(searchText: searchText) { (podcast) in
+                self.podcasts = podcast
+                self.tableView.reloadData()
+            }
+        })
     }
     
     //MARK:- tableView Methods
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = EpisodesController()
         let podcast = podcasts[indexPath.row]
