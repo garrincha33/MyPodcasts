@@ -13,9 +13,7 @@ class PlayerDetailsView: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         observePlayCurrentTime()
-        
         let time = CMTimeMake(1, 3)
         let times = [NSValue(time: time)]
         player.addBoundaryTimeObserver(forTimes: times, queue: .main) {
@@ -47,6 +45,29 @@ class PlayerDetailsView: UIView {
     @IBOutlet weak var currentTimeSlider: UISlider!
     @IBOutlet weak var currentTimeLable: UILabel!
     @IBOutlet weak var durationLable: UILabel!
+    
+    @IBAction func handleCurrentTimerSliderChange(_ sender: Any) {
+        let percentageValue = currentTimeSlider.value
+        guard let duration = player.currentItem?.duration else {return}
+        let durationSeconds = CMTimeGetSeconds(duration)
+        let seekTimeSeconds = Float64(percentageValue) * durationSeconds
+        let seekTime = CMTimeMakeWithSeconds(seekTimeSeconds, Int32(NSEC_PER_SEC))
+        player.seek(to: seekTime)
+    }
+    
+    
+    @IBAction func handleRewind(_ sender: Any) {
+        seekToCurrentTime(delta: -15)
+    }
+
+    @IBAction func handleFastForward(_ sender: Any) {
+        seekToCurrentTime(delta: 15)
+    }
+    
+    @IBAction func handleVolumeChange(_ sender: UISlider) {
+        player.volume = sender.value
+    }
+    
     //MARK:-
     
     var episode: Episode! {
@@ -59,6 +80,13 @@ class PlayerDetailsView: UIView {
             print("\(episodeAuthor.text = episode.author)")
         }
     }
+    
+    fileprivate func seekToCurrentTime(delta: Int64) {
+        let fiftenSeconds = CMTimeMake(delta, 1)
+        let seekTime = CMTimeAdd(player.currentTime(), fiftenSeconds)
+        player.seek(to: seekTime)
+    }
+    
     fileprivate func observePlayCurrentTime() {
         let interval = CMTimeMake(1, 2)
         player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { (time) in
