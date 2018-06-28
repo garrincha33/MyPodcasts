@@ -22,7 +22,6 @@ class MainTabBarController: UITabBarController {
     }
     
     //MARK:- Setup viewcontrollers
-    
     @objc fileprivate func minimizePlayerDetails() {
         maximizedTopAnchorContraints.isActive = false
         minimizedTopAnchorContraints.isActive = true

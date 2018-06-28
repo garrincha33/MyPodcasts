@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B0B320820E385CF00C777CB /* PodcastsSearchingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B0B320720E385CF00C777CB /* PodcastsSearchingView.xib */; };
+		1B0B320A20E54E6800C777CB /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B320920E54E6800C777CB /* FavouritesController.swift */; };
 		1B1412CF2083B2DB002D310F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1412CE2083B2DB002D310F /* AppDelegate.swift */; };
 		1B1412D12083B2DB002D310F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1412D02083B2DB002D310F /* ViewController.swift */; };
 		1B1412D42083B2DB002D310F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1412D22083B2DB002D310F /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		1B0B320720E385CF00C777CB /* PodcastsSearchingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastsSearchingView.xib; sourceTree = "<group>"; };
+		1B0B320920E54E6800C777CB /* FavouritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
 		1B1412CB2083B2DB002D310F /* MyPodcasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPodcasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B1412CE2083B2DB002D310F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B1412D02083B2DB002D310F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				1BDC5920209844FC00C393D1 /* MainTabBarController.swift */,
 				1BDC5954209B7D4200C393D1 /* PodcastSearchController.swift */,
 				1B1D7A2220B801EB006D0E2A /* EpisodesController.swift */,
+				1B0B320920E54E6800C777CB /* FavouritesController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B0B320A20E54E6800C777CB /* FavouritesController.swift in Sources */,
 				1BCBF11520C287E6001B1A79 /* RSSFeed.swift in Sources */,
 				1B2F383A20C9898600AB7353 /* PlayerDetailsView.swift in Sources */,
 				1BDC5955209B7D4200C393D1 /* PodcastSearchController.swift in Sources */,
