@@ -38,7 +38,7 @@ class PodcastSearchController: UITableViewController, UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         podcasts = []
         tableView.reloadData()
-        
+
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false, block: { (timer) in
             APIService.shared.fetchPodcasts(searchText: searchText) { (podcast) in
