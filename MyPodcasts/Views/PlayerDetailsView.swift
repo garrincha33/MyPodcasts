@@ -21,6 +21,10 @@ class PlayerDetailsView: UIView {
         }
     }
     
+    static func initFromNib() -> PlayerDetailsView {
+        return Bundle.main.loadNibNamed("PlayerDetailsView", owner: self, options: nil)?.first as! PlayerDetailsView
+    }
+    
     deinit {
         print("reclaiming memory......")
     }
@@ -74,12 +78,12 @@ class PlayerDetailsView: UIView {
     //MARK:-
     var episode: Episode! {
         didSet {
-            playEpisode()
-            guard let url = URL(string: episode.imageUrl ?? "") else {return}
-            episodeImageView.sd_setImage(with: url, completed: nil)
+            
             episodeTitle.text = episode.title
             episodeAuthor.text = episode.author
-            print("\(episodeAuthor.text = episode.author)")
+            playEpisode()
+            guard let url = URL(string: episode.imageUrl ?? "") else {return}
+            episodeImageView.sd_setImage(with: url)
         }
     }
     
