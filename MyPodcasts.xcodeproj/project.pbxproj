@@ -10,6 +10,7 @@
 		1B0B320820E385CF00C777CB /* PodcastsSearchingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B0B320720E385CF00C777CB /* PodcastsSearchingView.xib */; };
 		1B0B320A20E54E6800C777CB /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B320920E54E6800C777CB /* FavouritesController.swift */; };
 		1B0B320C20E608DE00C777CB /* FavouritePodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B320B20E608DE00C777CB /* FavouritePodcastCell.swift */; };
+		1B0B320E20E628C900C777CB /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0B320D20E628C900C777CB /* UserDefaults.swift */; };
 		1B1412CF2083B2DB002D310F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1412CE2083B2DB002D310F /* AppDelegate.swift */; };
 		1B1412D12083B2DB002D310F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1412D02083B2DB002D310F /* ViewController.swift */; };
 		1B1412D42083B2DB002D310F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1412D22083B2DB002D310F /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		1B0B320720E385CF00C777CB /* PodcastsSearchingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastsSearchingView.xib; sourceTree = "<group>"; };
 		1B0B320920E54E6800C777CB /* FavouritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
 		1B0B320B20E608DE00C777CB /* FavouritePodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePodcastCell.swift; sourceTree = "<group>"; };
+		1B0B320D20E628C900C777CB /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		1B1412CB2083B2DB002D310F /* MyPodcasts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPodcasts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B1412CE2083B2DB002D310F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B1412D02083B2DB002D310F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				1BCBF11220C28644001B1A79 /* String.swift */,
 				1BCBF11420C287E6001B1A79 /* RSSFeed.swift */,
 				1B7BE8F120E0EFB8005D89FE /* CMTime.swift */,
+				1B0B320D20E628C900C777CB /* UserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				1B2F383A20C9898600AB7353 /* PlayerDetailsView.swift in Sources */,
 				1BDC5955209B7D4200C393D1 /* PodcastSearchController.swift in Sources */,
 				1BCBF11320C28644001B1A79 /* String.swift in Sources */,
+				1B0B320E20E628C900C777CB /* UserDefaults.swift in Sources */,
 				1B7BE8F220E0EFB8005D89FE /* CMTime.swift in Sources */,
 				1B1412D12083B2DB002D310F /* ViewController.swift in Sources */,
 				1B1412CF2083B2DB002D310F /* AppDelegate.swift in Sources */,

@@ -54,25 +54,27 @@ class EpisodesController: UITableViewController {
         ]
         
     }
-    
-    let favouritedPodcast = "favouritedPodcast"
-    
+
     @objc fileprivate func handleSaveButtonPressed() {
         
         guard let podcast = self.podcast else {return}
-        let data = NSKeyedArchiver.archivedData(withRootObject: podcast)
-        UserDefaults.standard.set(data, forKey: favouritedPodcast)
+        var listOfPodcasts = UserDefaults.standard.savedPodcasts()
+        listOfPodcasts.append(podcast)
+        let data = NSKeyedArchiver.archivedData(withRootObject: listOfPodcasts)
+        UserDefaults.standard.set(data, forKey: UserDefaults.favouritedPodcastKey)
     }
 
     @objc fileprivate func fetchButtonPressed() {
 
-        let value = UserDefaults.standard.value(forKey: favouritedPodcast) as? String
+        let value = UserDefaults.standard.value(forKey: UserDefaults.favouritedPodcastKey) as? String
         print(value ?? "")
-    
-        guard let data = UserDefaults.standard.data(forKey: favouritedPodcast) else {return}
-        let podcast = NSKeyedUnarchiver.unarchiveObject(with: data) as? Podcasts
-        print(podcast?.trackName, podcast?.artistName)
-        
+        guard let data = UserDefaults.standard.data(forKey: UserDefaults.favouritedPodcastKey) else {return}
+
+        let savedPodcasts = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Podcasts]
+        savedPodcasts?.forEach({ (p) in
+            print(p.trackName ?? "")
+        })
+
     }
     
     fileprivate func setupTableView() {
