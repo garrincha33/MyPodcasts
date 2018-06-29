@@ -15,10 +15,9 @@ class MainTabBarController: UITabBarController {
         tabBar.tintColor = .purple
         UINavigationBar.appearance().prefersLargeTitles = true
         setupViewControllers()
-        
         setupPlayerDetailsController()
         
-        perform(#selector(maximizePlayerDetails), with: nil, afterDelay: 1)
+        //perform(#selector(maximizePlayerDetails), with: nil, afterDelay: 1)
     }
     
     //MARK:- Setup viewcontrollers
