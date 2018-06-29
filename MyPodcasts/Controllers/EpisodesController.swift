@@ -25,6 +25,7 @@ class EpisodesController: UITableViewController {
         super.viewDidLoad()
         
         setupTableView()
+        setupNavigationBarButtons()
     }
     
     //MARK:- podcastFeed
@@ -43,6 +44,37 @@ class EpisodesController: UITableViewController {
     var episodes = [Episode]()
     
     //MARK:- setupTableView
+    
+    fileprivate func setupNavigationBarButtons() {
+        
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(title: "favourite", style: .plain, target: self, action: #selector(handleSaveButtonPressed)),
+            UIBarButtonItem(title: "Fetch", style: .plain, target: self, action: #selector(fetchButtonPressed))
+
+        ]
+        
+    }
+    
+    let favouritedPodcast = "favouritedPodcast"
+    
+    @objc fileprivate func handleSaveButtonPressed() {
+        
+        guard let podcast = self.podcast else {return}
+        let data = NSKeyedArchiver.archivedData(withRootObject: podcast)
+        UserDefaults.standard.set(data, forKey: favouritedPodcast)
+    }
+
+    @objc fileprivate func fetchButtonPressed() {
+
+        let value = UserDefaults.standard.value(forKey: favouritedPodcast) as? String
+        print(value ?? "")
+    
+        guard let data = UserDefaults.standard.data(forKey: favouritedPodcast) else {return}
+        let podcast = NSKeyedUnarchiver.unarchiveObject(with: data) as? Podcasts
+        print(podcast?.trackName, podcast?.artistName)
+        
+    }
+    
     fileprivate func setupTableView() {
         tableView.tableFooterView = UIView()
         APIService.shared.makeNib(with: "EpisodeCell", tableView: tableView, cellId: cellId)
